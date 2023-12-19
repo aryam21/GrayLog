@@ -9,7 +9,7 @@ build:
   build_file: none
   output_files: output/*.zip
   image_template: graylog-5.0
-  image_name: aryam21/log-collector-gl
+  image_name: aryam21/graylog-5.0
 
 deploy:
   context: aryam21/DEV
