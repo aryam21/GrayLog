@@ -24,7 +24,7 @@ volumes:
   name: graylog-data
     
 properties:
-  revision : 25
+  revision : 26
   GRAYLOG_MONGODB_URI : mongodb://admin:XjxvxvsSG2Mh6iIa9Rb0@mongodb-5-0-0.mongodb-5-0:27017,mongodb-5-0-1.mongodb-5-0:27017,mongodb-5-0-2.mongodb-5-0:27017/graylog?replicaSet=rs0
   GRAYLOG_ELASTICSEARCH_HOSTS : http://elasticsearch-7-1-0.elasticsearch-7-1:9200/,http://elasticsearch-7-1-1.elasticsearch-7-1:9200/,http://elasticsearch-7-1-2.elasticsearch-7-1:9200/
   NODE_MODE: multi-node
