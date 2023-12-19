@@ -1,18 +1,18 @@
 app:
   name: LogCollectorGL
   code: LCGL
-  notify: appz@cloudbourne.co
+  notify: aramanan@control.com
 
 build:
-  version: 3.1
+  version: 5.0
   env: DEV
   build_file: none
   output_files: output/*.zip
-  image_template: graylog-3.1
-  image_name: alpha/log-collector-gl
+  image_template: graylog-5.0
+  image_name: aryam21/log-collector-gl
 
 deploy:
-  context: alpha/DEV
+  context: aryam21/DEV
   replicas: 1
   port:
   - 9000
@@ -22,13 +22,14 @@ volumes:
 - claim: graylog-data
   mount: /usr/share/graylog/data/journal
   name: graylog-data
-
-monitor:
-  notify: appzops@cloudbourne.co      
-
+    
 properties:
   revision : 25
-  GRAYLOG_MONGODB_URI : mongodb://appz-logcollectordb-3-1:27017/graylog  
-  GRAYLOG_ELASTICSEARCH_HOSTS : http://appz-logcollectores-3-1:9200/
+  GRAYLOG_MONGODB_URI : mongodb://admin:XjxvxvsSG2Mh6iIa9Rb0@mongodb-5-0-0.mongodb-5-0:27017,mongodb-5-0-1.mongodb-5-0:27017,mongodb-5-0-2.mongodb-5-0:27017/graylog?replicaSet=rs0
+  GRAYLOG_ELASTICSEARCH_HOSTS : http://elasticsearch-7-1-0.elasticsearch-7-1:9200/,http://elasticsearch-7-1-1.elasticsearch-7-1:9200/,http://elasticsearch-7-1-2.elasticsearch-7-1:9200/
+  NODE_MODE: multi-node
   GRAYLOG_ELASTICSEARCH_DISCOVERY_ENABLED : false
-  GRAYLOG_ROOT_PASSWORD_SHA2 : aee6e0898de4b1316dabd00451ebeb3ec9e7fd9c03520497eff2b0a29bfdc776
+  GRAYLOG_PASSWORD_SECRET:
+    vault: GRAYLOG_PASSWORD_SECRET
+  GRAYLOG_ROOT_PASSWORD_SHA2:
+    vault: GRAYLOG_ROOT_PASSWORD_SHA2
