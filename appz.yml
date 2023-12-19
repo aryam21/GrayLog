@@ -1,6 +1,6 @@
 app:
-  name: LogCollectorGL
-  code: LCGL
+  name: GrayLog
+  code: GrayLog
   notify: aramanan@control.com
 
 build:
@@ -9,15 +9,14 @@ build:
   build_file: none
   output_files: output/*.zip
   image_template: graylog-5.0
-  image_name: aryam21/graylog-5.0
-
 deploy:
   context: aryam21/DEV
-  replicas: 1
+  replicas: 3
+  type: statefulset
   port:
   - 9000
   - 12201
-
+  
 volumes:
 - claim: graylog-data
   mount: /usr/share/graylog/data/journal
