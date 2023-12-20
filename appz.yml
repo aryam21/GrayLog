@@ -27,8 +27,8 @@ volumes:
 properties:
   revision : 27
   #GRAYLOG_MONGODB_URI : mongodb://admin:XjxvxvsSG2Mh6iIa9Rb0@mongodb-5-0-0.mongodb-5-0:27017,mongodb-5-0-1.mongodb-5-0:27017,mongodb-5-0-2.mongodb-5-0:27017/graylog?replicaSet=rs0
-  GRAYLOG_MONGODB_URI : "mongodb://admin:XjxvxvsSG2Mh6iIa9Rb0@mongodb-5-0-0.mongodb-5-0.aryam21-dev.svc.cluster.local:27017,mongodb-5-0-1.mongodb-5-0.aryam21-dev.svc.cluster.local:27017,mongodb-5-0-2.mongodb-5-0.aryam21-dev.svc.cluster.local:27017/graylog?replicaSet=rs0"
-  GRAYLOG_ELASTICSEARCH_HOSTS : "http://elasticsearch-7-1-0.elasticsearch-7-1:9200/,http://elasticsearch-7-1-1.elasticsearch-7-1:9200/,http://elasticsearch-7-1-2.elasticsearch-7-1:9200/"
+  GRAYLOG_MONGODB_URI : mongodb-5-0-0.mongodb-5-0.aryam21-dev.svc.cluster.local:27017,mongodb-5-0-1.mongodb-5-0.aryam21-dev.svc.cluster.local:27017,mongodb-5-0-2.mongodb-5-0.aryam21-dev.svc.cluster.local:27017/graylog?replicaSet=rs0
+  GRAYLOG_ELASTICSEARCH_HOSTS : http://elasticsearch-7-1-0.elasticsearch-7-1:9200/,http://elasticsearch-7-1-1.elasticsearch-7-1:9200/,http://elasticsearch-7-1-2.elasticsearch-7-1:9200/
   NODE_MODE: multi-node
   GRAYLOG_ELASTICSEARCH_DISCOVERY_ENABLED : false
   GRAYLOG_PASSWORD_SECRET:
