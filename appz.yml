@@ -11,7 +11,7 @@ build:
   image_template: graylog-5.0
 deploy:
   context: aryam21/DEV
-  replicas: 1
+  replicas: 3
   type: statefulset
   port:
   - 9000
