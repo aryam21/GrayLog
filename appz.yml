@@ -11,7 +11,7 @@ build:
   image_template: graylog-5.0
 deploy:
   context: aryam21/DEV
-  replicas: 1
+  replicas: 3
   type: statefulset
   port:
   - 9000
@@ -25,19 +25,19 @@ volumes:
   mode: ReadWriteOnce
     
 properties:
-  revision : 40
+  revision : 41
   GRAYLOG_MONGODB_URI :  "mongodb://admin:HUnQI3lHWrziLFtJ8Rml@mongodb-5-0-0.mongodb-5-0.aryam21-dev.svc.cluster.local:27017,mongodb-5-0-1.mongodb-5-0.aryam21-dev.svc.cluster.local:27017,mongodb-5-0-2.mongodb-5-0.aryam21-dev.svc.cluster.local:27017/graylog?replicaSet=rs0&authSource=admin"
   GRAYLOG_ELASTICSEARCH_HOSTS : http://elasticsearch-7-1-0.elasticsearch-7-1:9200/,http://elasticsearch-7-1-1.elasticsearch-7-1:9200/,http://elasticsearch-7-1-2.elasticsearch-7-1:9200/
   NODE_MODE: multi-node
   #GRAYLOG_ELASTICSEARCH_DISCOVERY_ENABLED : false
-  #GRAYLOG_PASSWORD_SECRET:
-  #  vault: GRAYLOG_PASSWORD_SECRET
-  #GRAYLOG_ROOT_PASSWORD_SHA2:
-   # vault: GRAYLOG_ROOT_PASSWORD_SHA2
+  GRAYLOG_PASSWORD_SECRET:
+    vault: GRAYLOG_PASSWORD_SECRET
+  GRAYLOG_ROOT_PASSWORD_SHA2:
+    vault: GRAYLOG_ROOT_PASSWORD_SHA2
   RETENTION_ENABLE: 1   
   ELASTICSEARCH_INDEX_TIME: PT1H
   ELASTICSEARCH_TOTAL_INDICES: 1095
   ELASTICSEARCH_NUMBEROF_REPLICAS: 1
   CLUSTER_MODE: 1  
-  GRAYLOG_PASSWORD_SECRET: mSVCIfD6bTQnUVhd3KRyyix8ZvBAMjQtcs8Mep9IGdtWPyKe3WJD1MPaVGfyVjhBnKpCRKUbe54ryEuXWSuDWvGu1K7BZLoJ
-  GRAYLOG_ROOT_PASSWORD_SHA2: 8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
+  #GRAYLOG_PASSWORD_SECRET: mSVCIfD6bTQnUVhd3KRyyix8ZvBAMjQtcs8Mep9IGdtWPyKe3WJD1MPaVGfyVjhBnKpCRKUbe54ryEuXWSuDWvGu1K7BZLoJ
+  #GRAYLOG_ROOT_PASSWORD_SHA2: 8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
