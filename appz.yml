@@ -25,7 +25,7 @@ volumes:
   mode: ReadWriteOnce
     
 properties:
-  revision : 47
+  revision : 48
   GRAYLOG_MONGODB_URI :  "mongodb://admin:HUnQI3lHWrziLFtJ8Rml@mongodb-5-0-0.mongodb-5-0.aryam21-dev.svc.cluster.local:27017,mongodb-5-0-1.mongodb-5-0.aryam21-dev.svc.cluster.local:27017,mongodb-5-0-2.mongodb-5-0.aryam21-dev.svc.cluster.local:27017/graylog?replicaSet=rs0&authSource=admin"
   GRAYLOG_ELASTICSEARCH_HOSTS : http://elasticsearch-7-1-0.elasticsearch-7-1:9200/,http://elasticsearch-7-1-1.elasticsearch-7-1:9200/,http://elasticsearch-7-1-2.elasticsearch-7-1:9200/
   NODE_MODE: multi-node
